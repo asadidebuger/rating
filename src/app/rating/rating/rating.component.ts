@@ -7,9 +7,9 @@ import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 })
 export class RatingComponent implements OnInit {
   @Input() stars:number=5;
-  @Input() value:number=0;
+  @Input() rate:number=0;
   @Input() starWidth:number=25;
-  @Output() changed = new EventEmitter<number>();
+  @Output() rateChange = new EventEmitter<number>();
   public states: any[] =new Array(this.stars).fill({});
   constructor() {
   }
@@ -17,15 +17,15 @@ export class RatingComponent implements OnInit {
   ngOnInit(): void {
     this.states=new Array(this.stars).fill({});
   }
-  setValue(rate:number){
-    this.value=rate;
+  setRate(rate:number){
+    this.rate=rate;
     for(let i=0;i<this.stars;i++){
-      this.states[i]={hover:false, select: i<this.value };
+      this.states[i]={hover:false, select: i<this.rate };
     }
   }
   changeHandler(rate:number){
-    this.setValue(rate);
-    this.changed.emit(rate);
+    this.setRate(rate);
+    this.rateChange.emit(rate);
   }
   handleHover(rate:number){
     for(let i=0;i<this.stars;i++){
@@ -35,7 +35,7 @@ export class RatingComponent implements OnInit {
 
   }
   handleLeave(){
-    this.setValue(this.value);
+    this.setRate(this.rate);
   }
 
 }

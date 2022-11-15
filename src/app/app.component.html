@@ -1,6 +1,5 @@
 <h2>Rating Component</h2>
 <p style="text-align: center">
-<app-rating [stars]="5" [starWidth]="50" (changed)="handleRate($event)" ></app-rating>
+<app-rating [stars]="5" [starWidth]="50"  [(rate)]="rate" ></app-rating>
 <span >{{rate}}/5</span>
 </p>
-

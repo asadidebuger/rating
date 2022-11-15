@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import {RatingModule} from "./rating/rating.module";
 import {RatingComponent} from "./rating/rating/rating.component";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import {RatingComponent} from "./rating/rating/rating.component";
   imports: [
     BrowserModule,
     RatingModule,
+    FormsModule,
 
   ],
   exports:[RatingComponent],
