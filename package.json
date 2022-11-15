@@ -1,6 +1,11 @@
 {
   "name": "rating",
   "version": "0.0.0",
+  "author": {
+    "email": "asadidebuger@gmail.com",
+    "name": "Mohammadreza Asadi",
+    "url": "https://microsign.ir"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
