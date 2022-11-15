@@ -20,7 +20,7 @@ export class RatingComponent implements OnInit {
   setValue(rate:number){
     this.value=rate;
     for(let i=0;i<this.stars;i++){
-      this.states[i]={hover:false, select: i<this.value};
+      this.states[i]={hover:false, select: i<this.value };
     }
   }
   changeHandler(rate:number){
