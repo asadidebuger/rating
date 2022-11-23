@@ -10,12 +10,10 @@ export class RatingComponent implements OnInit {
   @Input() rate:number=0;
   @Input() starWidth:number=25;
   @Output() rateChange = new EventEmitter<number>();
-  public states: any[] =new Array(this.stars).fill({});
+  public states: any[] =[]
   constructor() {
   }
-
   ngOnInit(): void {
-    // this.states=new Array(this.stars).fill({});
     this.setRate(this.rate);
   }
   setRate(rate:number){
